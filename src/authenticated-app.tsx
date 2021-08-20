@@ -20,11 +20,13 @@ export const AuthenticatedApp = () => {
             overlay={
               <Menu>
                 <Menu.Item key={"logout"}>
+                  {/*eslint-disable-next-line*/}
                   <a onClick={logout}>登出</a>
                 </Menu.Item>
               </Menu>
             }
           >
+            {/*eslint-disable-next-line*/}
             <a onClick={(e) => e.preventDefault()}>Hi,{user?.name}</a>
           </Dropdown>
         </HeaderRight>

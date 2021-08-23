@@ -7,7 +7,7 @@ import logo from "assets/logo.svg";
 import left from "assets/left.svg";
 import right from "assets/right.svg";
 // import { Helmet } from 'react-helmet';
-import { useDocumentTitle } from "../utils";
+// import { useDocumentTitle } from "../utils";
 
 export const UnauthenticatedApp = () => {
   const [isRegister, setIsRegister] = useState(false);

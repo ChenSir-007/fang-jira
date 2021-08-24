@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export const isFalsy = (value: unknown) => (value === 0 ? true : !!value);
 
@@ -43,7 +43,7 @@ export const useDebounce = <V>(value: V, delay?: number) => {
 };
 
 export const useDocumentTitle = (title: string, keepOnUnmount = true) => {
-  const oldTitle = document.title;
+  const oldTitle = useRef(document.title).current;
   useEffect(() => {
     document.title = title;
   }, [title]);
@@ -53,6 +53,5 @@ export const useDocumentTitle = (title: string, keepOnUnmount = true) => {
         document.title = oldTitle;
       }
     };
-    //eslint-disable-next-line
-  }, []);
+  }, [keepOnUnmount, oldTitle]);
 };
